@@ -7,7 +7,7 @@
 @endphp
 @section('content')
     <div align="center">
-        <h1>Horario General</h1>
+        <h1>Horario General Semanal</h1>
     </div>
     <div class="grid">
         <div class="row flex-just-center">
@@ -30,7 +30,7 @@
                                 @foreach($cursos as $curso)
                                     @if($curso->horario_nombre=='PERIODO 1')
                                         @php
-                                            $c=$c.'<a href="/cursos/'.$curso->id.'" class="button '.$colores[array_rand($colores)].' block-shadow-primary text-shadow">'.$curso->curso_nombre.'</a>';
+                                            $c=$c.'<a href="/cursos/'.$curso->id.'" class="button '.$colores[array_rand($colores)].' block-shadow-primary text-shadow">'.$curso->user_nombre.'</a>';
                                         @endphp
                                     @endif
                                 @endforeach
@@ -46,7 +46,7 @@
                                 @foreach($cursos as $curso)
                                     @if($curso->horario_nombre=='PERIODO 2')
                                         @php
-                                            $c=$c.'<a href="/cursos/'.$curso->id.'" class="button '.$colores[array_rand($colores)].' text-shadow">'.$curso->curso_nombre.'</a>';
+                                            $c=$c.'<a href="/cursos/'.$curso->id.'" class="button '.$colores[array_rand($colores)].' text-shadow">'.$curso->user_nombre.'</a>';
                                         @endphp
                                     @endif
                                 @endforeach
@@ -62,7 +62,7 @@
                                 @foreach($cursos as $curso)
                                     @if($curso->horario_nombre=='PERIODO 3')
                                         @php
-                                            $c=$c.'<a href="/cursos/'.$curso->id.'" class="button '.$colores[array_rand($colores)].' text-shadow">'.$curso->curso_nombre.'</a>';
+                                            $c=$c.'<a href="/cursos/'.$curso->id.'" class="button '.$colores[array_rand($colores)].' text-shadow">'.$curso->user_nombre.'</a>';
                                         @endphp
                                     @endif
                                 @endforeach
@@ -78,7 +78,7 @@
                                 @foreach($cursos as $curso)
                                     @if($curso->horario_nombre=='PERIODO 4')
                                         @php
-                                            $c=$c.'<a href="/cursos/'.$curso->id.'" class="button '.$colores[array_rand($colores)].' text-shadow">'.$curso->curso_nombre.'</a>';
+                                            $c=$c.'<a href="/cursos/'.$curso->id.'" class="button '.$colores[array_rand($colores)].' text-shadow">'.$curso->user_nombre.'</a>';
                                         @endphp
                                     @endif
                                 @endforeach
@@ -92,10 +92,60 @@
                 </table>
             </div>
         </div>
+    </div>
+
+    <hr>
+    <div align="center">
+        <h1>Horario General Fin de Semana</h1>
+    </div>
+    <div class="grid">
+        <div class="row flex-just-center">
+            <div class="cell colspan10">
+                <table class="table bordered hovered">
+                    <thead>
+                    <tr>
+                        <th class="bg-lighterBlue fg-white">Horario</th>
+                        <th class="bg-lighterBlue fg-white">Sábado</th>
+                        <th class="bg-lighterBlue fg-white">Domingo</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr id="fin1">
+                        <td class="bg-lightRed fg-white size4">08:00 a 12:30</td>
+                        @php $c=""; @endphp
+                        @foreach($cursos as $curso)
+                            @if($curso->horario_nombre=='SABADO 1')
+                                @php
+                                    $c=$c.'<a href="/cursos/'.$curso->id.'" class="button '.$colores[array_rand($colores)].' block-shadow-primary text-shadow">'.$curso->user_nombre.'</a>';
+                                @endphp
+                            @endif
+                        @endforeach
+                        <td>@php echo $c; @endphp</td>
+                        <td>@php echo $c; @endphp</td>
+                    </tr>
+                    <tr id="fin2">
+                        <td class="bg-lightRed fg-white">14:00 a 18:00</td>
+                        @php $c=""; @endphp
+                        @foreach($cursos as $curso)
+                            @if($curso->horario_nombre=='SABADO 2')
+                                @php
+                                    $c=$c.'<a href="/cursos/'.$curso->id.'" class="button '.$colores[array_rand($colores)].' text-shadow">'.$curso->user_nombre.'</a>';
+                                @endphp
+                            @endif
+                        @endforeach
+                        @php
+                            for ($i=0;$i<2;$i++){
+                                echo("<td>$c</td>");
+                            }
+                        @endphp
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
         <div align="center" class="pull-right">
             <a class="button danger" href="{{url('horarios')}}"><span class="mif-backward"></span> Regresar</a>
         </div>
-
     </div>
 
 @endsection

@@ -60,7 +60,7 @@
         </tbody>
     </table>
 
-    <div class="md-modal md-effect-7" id="modal-7">
+    {{--<div class="md-modal md-effect-7" id="modal-7">
         <div class="md-content" style="height: 500px;">
             <h3>Crear Curso</h3>
             <div class="cell">
@@ -75,14 +75,12 @@
                     <div class="cell">
                         <label for="moto">Moto Asignada: </label>
                         <div class="input-control select full-size">
-                            {{--<input type="text" name="modelo" value="{{old('modelo')}}">--}}
                             <select name="smotos" id="smotos"></select>
                         </div>
                     </div>
                     <div class="cell">
                         <label for="horario">Horario:  </label>
                         <div class="input-control select full-size">
-                            {{--<input type="text" name="modelo" value="{{old('modelo')}}">--}}
                             <select name="horario" id="horario"></select>
                         </div>
                     </div>
@@ -155,7 +153,8 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div>--}}
+
 @endsection
 
 @section('scripts')

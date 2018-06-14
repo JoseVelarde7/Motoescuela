@@ -55,10 +55,12 @@ function modificar(id) {
     var route = "/cursos/buscar/"+id;
     $.getJSON(route, function(res){
         $(res).each(function(key,value){
-            $('#nombre2').attr('value',value.curso_nombre);
+            console.log(value.inscripcion_estado);
+            $('#nombre2').attr('value',value.alumno_nombre);
             $("#smotos2").val(value.moto_id);
             $("#horario2").val(value.horario_id);
             $("#usuario2").val(value.user_id);
+            $("#estado").val(value.inscripcion_estado);
             $('#obs2').attr('value',value.curso_observacion);
             $('#ide').attr('value',value.id);
         });

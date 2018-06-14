@@ -14,23 +14,36 @@
     <div class="row">
         <div class="cell colspan1"></div>
         <div class="cell colspan6">
-            <form method="POST" action="{{url('inscripciones/insertar')}}" accept-charset="UTF-8" enctype="multipart/form-data">
+            <form method="POST" name="formu" id="formu" accept-charset="UTF-8" enctype="multipart/form-data">
                 {!! csrf_field() !!}
                 <div class="cell">
                     <h4 for="nit">Alumno: </h4>
                     <div class="input-control select full-size">
-                        <select name="alumno" id="alumno"></select>
+                        <select name="alumno" id="alumno" value="{{old('alumno')}}"></select>
                     </div>
                 </div>
                 <div class="cell">
-                    <h4 for="curso">Curso: </h4>
-                    <div class="input-control text" data-role="input">
-                        <input type="text" name="curso2" id="curso2" readonly>
-                        <a id="demo01" href="#animatedModal" class="button"><span class="mif-search"></span></a>
+                    <label for="moto">Moto Asignada: </label>
+                    <div class="input-control select full-size">
+                        {{--<input type="text" name="modelo" value="{{old('modelo')}}">--}}
+                        <select name="smotos" id="smotos" value="{{old('smotos')}}"></select>
                     </div>
                 </div>
                 <div class="cell">
-                    <h4 for="obs">Observaciones: </h4>
+                    <label for="horario">Horario:  </label>
+                    <div class="input-control select full-size">
+                        {{--<input type="text" name="modelo" value="{{old('modelo')}}">--}}
+                        <select name="horario" id="horario"></select>
+                    </div>
+                </div>
+                <div class="cell">
+                    <label for="usuario">Instructor: </label>
+                    <div class="input-control select full-size">
+                        <select name="usuario" id="usuario"></select>
+                    </div>
+                </div>
+                <div class="cell">
+                    <label for="obs">Observaciones: </label>
                     <div class="input-control text full-size">
                         <input type="text" name="obs" id="obs">
                     </div>
@@ -38,7 +51,7 @@
 
 
                 <div class="cell place-right">
-                    <button type="submit" class="button success block-shadow-success text-shadow">Inscribir</button>
+                    <a href="#" id="registrari" name="registrari" class="button success block-shadow-success text-shadow">Inscribir</a>
                     <a href="{{ url('/inscripciones') }}" class="button alert block-shadow-alert text-shadow">Regresar</a>
                 </div>
             </form>
@@ -68,12 +81,12 @@
                         </div>
                         <div class="content bg-white">
                             <div class="listview set-border padding10 default bg-white">
-                                @foreach($cursos as $curso)
+                                {{--@foreach($cursos as $curso)
                                     <div class="list" onclick="mostrar({{$curso->id}})">
                                         <img src="{{asset('img/disk.png')}}" class="list-icon">
                                         <span class="list-title">{{$curso->curso_nombre}}</span>
                                     </div>
-                                @endforeach
+                                @endforeach--}}
                             </div>
                         </div>
                     </div>

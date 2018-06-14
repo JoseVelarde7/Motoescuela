@@ -8,7 +8,7 @@
 @endsection
 @section('content')
     <div align="center">
-        <h1>Horarios <span id="nNombre"></span></h1>
+        <h1>Horarios Semanal <span id="nNombre"></span></h1>
     </div>
 
     <div class="grid">
@@ -38,6 +38,36 @@
                         <tr id="periodo4">
                             <td  class="bg-lightRed fg-white">16:30 a 18:30</td>
                         </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <hr>
+
+    <div align="center">
+        <h1>Horarios Fin de Semana <span id="nNombre"></span></h1>
+    </div>
+
+    <div class="grid">
+        <div class="row flex-just-center">
+            <div class="cell colspan8">
+                <table class="table bordered hovered">
+                    <thead>
+                    <tr>
+                        <th class="bg-lighterBlue fg-white">Horario</th>
+                        <th class="bg-lighterBlue fg-white">Sábado</th>
+                        <th class="bg-lighterBlue fg-white">Domingo</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr id="fin1">
+                        <td class="bg-lightRed fg-white size4">08:00 a 12:30</td>
+                    </tr>
+                    <tr id="fin2">
+                        <td class="bg-lightRed fg-white">14:00 a 18:00</td>
+                    </tr>
                     </tbody>
                 </table>
             </div>

@@ -37,6 +37,17 @@ class ExamenController extends Controller
         return view('examenes.resultados',compact('respuestas'));
     }
 
+    public function calificacion($id){
+        $resp1 = DB::table('teoria')
+            ->join('alumnos', 'alumnos.id', '=', 'teoria.alumno_id')
+            ->select('teoria.*', 'alumno_nombre')
+            ->where('teoria.id', $id)
+            ->get();
+        $respuestas = DB::table('opciones')->get();
+        $preguntas = DB::table('preguntas')->get();
+        return view('examenes.calificacion',compact('resp1','preguntas','respuestas'));
+    }
+
     public function edit($id){
         $preguntas = DB::table('preguntas')->where('preguntas.id', $id)->get();
         $respuestas=DB::table('opciones')->where('opciones.preguntas_id',$id)->get();

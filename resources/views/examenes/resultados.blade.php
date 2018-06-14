@@ -27,8 +27,8 @@
                 <td>{{$respuesta->alumno_nombre}}</td>
                 <td style="padding: 0;">
                     {!! csrf_field() !!}
-                    <button class="button primary md-trigger" onclick="mostrar2({{$respuesta->id}},'{{$respuesta->teoria_respuestas}}')"><span class="icon mif-info"></span></button>
-                    {{--<button type="button" class="button danger" onclick='confirmar({{$respuesta->id}})'><span class="icon mif-cancel"></span></button>--}}
+                    <button class="button primary md-trigger" onclick="mostrar2({{$respuesta->id}},'{{$respuesta->teoria_respuestas}}',{{$respuesta->alumno_id}})"><span class="icon mif-info"></span></button>
+                    <a href="{{url('/examenes/calificacion/'.$respuesta->id)}}" class="button fg-white danger"><span class="icon mif-question"></span></a>
                 </td>
             </tr>
         @empty

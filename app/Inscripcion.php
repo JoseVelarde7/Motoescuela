@@ -14,6 +14,6 @@ class Inscripcion extends Model
     public $timestamps = false;
 
     protected $fillable=[
-        'ins_fecha','ins_obs','alumno_id','curso_id'
+        'ins_fecha','ins_obs','inscripcion_estado','alumno_id','moto_id','horario_id','user_id'
     ];
 }

@@ -111,7 +111,6 @@ function mostrar2(id,cadena) {
             }
         });
     });
-
 }
 
 

@@ -26,11 +26,11 @@ class HorarioController extends Controller
     }
 
     public function general(){
-        $cursos = DB::table('cursos')
-            ->join('horarios', 'horarios.id', '=', 'cursos.horario_id')
-            ->join('users', 'users.id', '=', 'cursos.user_id')
-            ->select('cursos.*', 'horario_nombre','user_nombre')
-            ->where('curso_estado','=',1)
+        $cursos = DB::table('inscripcones')
+            ->join('horarios', 'horarios.id', '=', 'inscripcones.horario_id')
+            ->join('users', 'users.id', '=', 'inscripcones.user_id')
+            ->select('inscripcones.*', 'horario_nombre','user_nombre')
+            ->where('inscripcion_estado','=',1)
             ->get();
         return view('horarios.general',compact('cursos'));
     }
@@ -67,11 +67,12 @@ class HorarioController extends Controller
     }
 
     public function consulta1($id){
-        $curso = DB::table('cursos')
-            ->join('horarios', 'horarios.id', '=', 'cursos.horario_id')
-            ->join('users', 'users.id', '=', 'cursos.user_id')
-            ->select('cursos.*', 'horario_nombre','user_nombre')
-            ->where([['cursos.user_id', $id],['cursos.curso_estado',1]])
+        $curso = DB::table('inscripcones')
+            ->join('horarios', 'horarios.id', '=', 'inscripcones.horario_id')
+            ->join('users', 'users.id', '=', 'inscripcones.user_id')
+            ->join('alumnos', 'alumnos.id', '=', 'inscripcones.alumno_id')
+            ->select('inscripcones.*', 'horario_nombre','user_nombre','alumno_nombre')
+            ->where([['inscripcones.user_id', $id],['inscripcones.inscripcion_estado',1]])
             ->get();
         return response()->json($curso);
     }

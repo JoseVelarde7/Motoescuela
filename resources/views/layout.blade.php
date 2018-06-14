@@ -19,35 +19,6 @@
     <a class="app-bar-element branding">1ra Motoescuela Dakar</a>
     <span class="app-bar-divider"></span>
     <ul class="app-bar-menu">
-        <!--<li><a href="">Dashboard</a></li>
-        <li>
-            <a href="" class="dropdown-toggle">Project</a>
-            <ul class="d-menu" data-role="dropdown">
-                <li><a href="">New project</a></li>
-                <li class="divider"></li>
-                <li>
-                    <a href="" class="dropdown-toggle">Reopen</a>
-                    <ul class="d-menu" data-role="dropdown">
-                        <li><a href="">Project 1</a></li>
-                        <li><a href="">Project 2</a></li>
-                        <li><a href="">Project 3</a></li>
-                        <li class="divider"></li>
-                        <li><a href="">Clear list</a></li>
-                    </ul>
-                </li>
-            </ul>
-        </li>
-        <li><a href="">Security</a></li>
-        <li><a href="">System</a></li>
-        <li>
-            <a href="" class="dropdown-toggle">Help</a>
-            <ul class="d-menu" data-role="dropdown">
-                <li><a href="">ChatOn</a></li>
-                <li><a href="">Community support</a></li>
-                <li class="divider"></li>
-                <li><a href="">About</a></li>
-            </ul>
-        </li>-->
     </ul>
 
     <div class="app-bar-element place-right">
@@ -85,19 +56,11 @@
                             <span class="title">Alumnos</span>
                         </a>
                     </li>
-                    {{--<li id="menu_inst"><a href="{{ url('/instructores') }}">
-                            <span class="mif-users icon"></span>
-                            <span class="title">Instructores</span>
-                        </a>
-                    </li>--}}
                     <li id="menu_moto"><a href="{{ url('/motos') }}">
                             <span class="mif-motorcycle icon"></span>
                             <span class="title">Motocicletas</span>
-                        </a></li>
-                    <li id="menu_curso"><a href="{{ url('/cursos') }}">
-                            <span class="mif-profile icon"></span>
-                            <span class="title">Cursos</span>
-                        </a></li>
+                        </a>
+                    </li>
                     <li id="menu_horario"><a href="{{ url('/horarios') }}">
                             <span class="mif-table icon"></span>
                             <span class="title">Horarios</span>
@@ -125,11 +88,6 @@
                             <span class="title">Examenes</span>
                         </a>
                     </li>
-                    <!--<li><a href="#">
-                        <span class="mif-apps icon"></span>
-                        <span class="title">all items</span>
-                        <span class="counter">0</span>
-                    </a></li>-->
                 </ul>
             </div>
             <div class="cell auto-size padding20 bg-white" id="cell-content">

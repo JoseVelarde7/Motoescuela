@@ -18,9 +18,10 @@ $(document).ready(function(){
                         var ide=$('#instructor').val();
                         var route = "/horarios/consulta/"+ide;
                         $.getJSON(route, function(res){
+                            console.log(res);
                             if(res!=""){
                                 $(res).each(function (key,value) {
-                                    pintar(value.curso_nombre,value.horario_nombre);
+                                    pintar(value.alumno_nombre,value.horario_nombre);
                                 });
                                 $('#nNombre').html(`de ${res[0].user_nombre}`);
                             }else{
@@ -116,6 +117,14 @@ function pintar(cursos,horarios) {
             '<td class="hijos"><button class="button primary block-shadow-primary text-shadow">'+cursos+'</button></td>\n' +
             '<td class="hijos"><button class="button primary block-shadow-primary text-shadow">'+cursos+'</button></td>\n' +
             '<td class="hijos"><button class="button primary block-shadow-primary text-shadow">'+cursos+'</button></td>\n' +
+            '<td class="hijos"><button class="button primary block-shadow-primary text-shadow">'+cursos+'</button></td>');
+    }
+    if(horarios=='SABADO 1'){
+        $('#fin1').append('<td class="hijos"><button class="button primary block-shadow-primary text-shadow">'+cursos+'</button></td>\n' +
+            '<td class="hijos"><button class="button primary block-shadow-primary text-shadow">'+cursos+'</button></td>');
+    }
+    if(horarios=='SABADO 2'){
+        $('#fin2').append('<td class="hijos"><button class="button primary block-shadow-primary text-shadow">'+cursos+'</button></td>\n' +
             '<td class="hijos"><button class="button primary block-shadow-primary text-shadow">'+cursos+'</button></td>');
     }
 }
