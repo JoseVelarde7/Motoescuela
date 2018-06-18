@@ -128,7 +128,7 @@ Route::get('/examenes/examen','ExamenController@examen')->name('examen.examen');
     Route::put('/examenes/{examen}','ExamenController@update')->middleware('auth');
     Route::get('/examenes/{examen}/borrar','ExamenController@destroy')->middleware('auth');
 
-
+    Route::get("download-pdf/{ide}","ReporteController@downloadPDF");
 
 
 
