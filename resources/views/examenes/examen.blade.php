@@ -5,7 +5,7 @@
 @endsection
 
 @section('nom')
-    <span class="dropdown-toggle"><span class="mif-cog"></span>{{$nombre}}</span>
+    <span class=""><span class="mif-cog"></span>{{$nombre}}</span>
     <h3 style="display: none;">{{$id}}</h3>
 @endsection
 @section('content')

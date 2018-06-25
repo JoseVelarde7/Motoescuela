@@ -20,7 +20,7 @@ class UsersTableSeeder extends Seeder
             'user_tipo' => "USER1",
             'user_user' => "juan",
             'password' => bcrypt('secret'),
-            'user_foto' => str_random(10),
+            'user_foto' => str_random(10)
         ]);
     }
 }

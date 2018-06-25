@@ -13,8 +13,8 @@
                 </div>
                 <h4 class="tile-label" align="center">Marcar</h4>
             </a>
-        </div>--}}
-        <a class="button bg-orange fg-white" href="{{url('asistencias/marcar')}}"><span class="mif-plus"></span> Marcar</a>
+        </div>
+        <a class="button bg-orange fg-white" href="{{url('asistencias/marcar')}}"><span class="mif-plus"></span> Marcar</a>--}}
         <table class="dataTable border bordered" data-role="datatable" data-auto-width="false" data-order='[[ 0, "dec" ]]' data-page-length='6'>
             <thead>
             <tr>

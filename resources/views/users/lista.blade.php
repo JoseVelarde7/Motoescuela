@@ -3,6 +3,7 @@
     <h1 class="text-light">Usuarios<span class="mif-user place-right"></span></h1>
     <hr class="thin bg-grayLighter">
     <a class="button primary" href="{{url('users/crear')}}"><span class="mif-plus"></span> Crear</a>
+    <a href="{{url('reportes/usuarios-pdf')}}" class="button success"><span class="mif-print"></span>Imprimir</a>
     <hr class="thin bg-grayLighter">
     <table class="dataTable border bordered" data-role="datatable" data-auto-width="false" data-order='[[ 0, "dec" ]]' data-page-length='6'>
         <thead>

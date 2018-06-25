@@ -249,42 +249,42 @@
     </div>
 
     <div class="tile-group one">
-        <span class="tile-group-title">Cursos</span>
+        <span class="tile-group-title">Inscripciones</span>
         <a class="tile-small bg-blue fg-white" style="display: none;" id="contenedor1" data-role="tile">
-            <h4 align="center" id="curso1"></h4>
+            <h6 align="center" id="curso1"></h6>
         </a>
         <a class="tile-small bg-red fg-white" style="display: none;" id="contenedor2" data-role="tile">
-            <h4 align="center" id="curso2"></h4>
+            <h6 align="center" id="curso2"></h6>
         </a>
         <a class="tile-small bg-yellow fg-white" style="display: none;" id="contenedor3" data-role="tile">
-            <h4 align="center" id="curso3"></h4>
+            <h6 align="center" id="curso3"></h6>
         </a>
         <a class="tile-small bg-darkOrange fg-white" style="display: none;" id="contenedor4" data-role="tile">
-            <h4 align="center" id="curso4"></h4>
+            <h6 align="center" id="curso4"></h6>
         </a>
         <a class="tile-small bg-pink fg-white" style="display: none;" id="contenedor5" data-role="tile">
-            <h4 align="center" id="curso5"></h4>
+            <h6 align="center" id="curso5"></h6>
         </a>
         <a class="tile-small bg-amber fg-white" style="display: none;" id="contenedor6" data-role="tile">
-            <h4 align="center" id="curso6"></h4>
+            <h6 align="center" id="curso6"></h6>
         </a>
         <a class="tile-small bg-brown fg-white" style="display: none;" id="contenedor7" data-role="tile">
-            <h4 align="center" id="curso7"></h4>
+            <h6 align="center" id="curso7"></h6>
         </a>
         <a class="tile-small bg-darkCrimson fg-white" style="display: none;" id="contenedor8" data-role="tile">
-            <h4 align="center" id="curso8"></h4>
+            <h6 align="center" id="curso8"></h6>
         </a>
         <a class="tile-small bg-darkMagenta fg-white" style="display: none;" id="contenedor9" data-role="tile">
-            <h4 align="center" id="curso9"></h4>
+            <h6 align="center" id="curso9"></h6>
         </a>
     </div>
 
     <div class="tile-group double">
-        <span class="tile-group-title">Motocletas</span>
+        <span class="tile-group-title">Motocicletas</span>
         <div class="tile-container">
             <div class="tile bg-lighterBlue" data-role="tile">
                 <div class="tile-content" align="center">
-                    <h1 style="font-size: 80px;">150</h1>
+                    <h1 style="font-size: 100px;" id="cmotos"></h1>
                 </div>
                 <div class="tile-label">Motos Registrados</div>
             </div>

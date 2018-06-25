@@ -120,7 +120,7 @@ Route::get('/examenes/examen','ExamenController@examen')->name('examen.examen');
     Route::get('/examenes/pregunta/{id}','ExamenController@pregunta')->name('examen.pregunta')->middleware('auth');
     Route::get('/examenes/crear','ExamenController@create')->name('examen.create')->middleware('auth');
     Route::get('/examenes/resultados','ExamenController@resultado')->name('examen.resultados')->middleware('auth');
-    Route::get('/examenes/soluciones','ExamenController@soluciones')->name('examen.soluciones')->middleware('auth');
+    Route::get('/examenes/soluciones','ExamenController@soluciones')->name('examen.soluciones');
     Route::get('/examenes/calificacion/{id}','ExamenController@calificacion')->name('examen.calificacion')->middleware('auth');
     Route::post('/examenes/store','ExamenController@store')->name('examen.store')->middleware('auth');
     Route::post('/examenes/registrar','ExamenController@registrar')->name('examen.registrar')->middleware('auth');
@@ -129,6 +129,7 @@ Route::get('/examenes/examen','ExamenController@examen')->name('examen.examen');
     Route::get('/examenes/{examen}/borrar','ExamenController@destroy')->middleware('auth');
 
     Route::get("download-pdf/{ide}","ReporteController@downloadPDF");
+    Route::get("reportes/usuarios-pdf","ReporteController@usuarioPDF");
 
 
 

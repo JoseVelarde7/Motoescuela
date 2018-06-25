@@ -10,7 +10,8 @@ use Illuminate\Support\Facades\DB;
 class TeoriaController extends Controller
 {
     public function index(){
-        return view('teoria.ingreso');
+        $resultado="";
+        return view('teoria.ingreso',compact('resultado'));
     }
 
     public function store(){
@@ -21,12 +22,13 @@ class TeoriaController extends Controller
         $now = new \DateTime();
         //$cadena = json_encode($data2);
         $cadena=implode(",", $data2);
-        Teoria::create([
+        $resultado=Teoria::create([
             'teoria_fecha' => $now->format('Y-m-d'),
             'teoria_respuestas' => $cadena,
             'alumno_id' => $data['ide'],
         ]);
-        return redirect()->route('teoria.index');
+        //return redirect()->route('teoria.index',compact('resultado'));
+        return view('teoria.ingreso',compact('resultado'));
     }
 
     public function validar(Request $request){

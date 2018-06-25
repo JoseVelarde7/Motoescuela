@@ -9,9 +9,7 @@ use PDF;
 class ReporteController extends Controller
 {
     public function downloadPDF($ide)
-
     {
-
         $resp1 = DB::table('teoria')
             ->join('alumnos', 'alumnos.id', '=', 'teoria.alumno_id')
             ->select('teoria.*', 'alumno_nombre')
@@ -25,5 +23,11 @@ class ReporteController extends Controller
 
         return $pdf->download('invoice.pdf');
 
+    }
+
+    public function usuarioPDF(){
+        $usuarios = DB::table('users')->get();
+        $pdf = PDF::loadView('pdf.usersView',compact('usuarios'));
+        return $pdf->download('usuarios.pdf');
     }
 }

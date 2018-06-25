@@ -80,6 +80,24 @@ function confirmar(id) {
         }
     });
 }
+function mostrar(id) {
+    var route = "/inscripciones/generar/"+id;
+    $.getJSON(route, function(res){
+        $(res).each(function(key,value){
+            $('#nalumno').html(value.alumno_nombre);
+            $('#nistructor').html(value.user_nombre);
+            $('#nfoto').attr("src","/storage/"+value.user_foto);
+            $('#nmoto').html(value.moto_marca);
+            $('#nfoto2').attr("src","/storage/"+value.moto_foto);
+            $('#entrada').html(value.horario_dias+" de "+value.horario_entrada+" a "+value.horario_salida);
+            if(value.inscripcion_estado==1){
+                $('.estados').html('<h3>Activo</h3>');
+            }else{
+                $('.estados').html('<h3>Inactivo</h3>');
+            }
+        });
+    });
+}
 
 function usuarios() {
     var route = "/usuarios/generar";
@@ -119,12 +137,7 @@ function pintar(cursos,horarios) {
             '<td class="hijos"><button class="button primary block-shadow-primary text-shadow">'+cursos+'</button></td>\n' +
             '<td class="hijos"><button class="button primary block-shadow-primary text-shadow">'+cursos+'</button></td>');
     }
-    if(horarios=='SABADO 1'){
-        $('#fin1').append('<td class="hijos"><button class="button primary block-shadow-primary text-shadow">'+cursos+'</button></td>\n' +
-            '<td class="hijos"><button class="button primary block-shadow-primary text-shadow">'+cursos+'</button></td>');
-    }
-    if(horarios=='SABADO 2'){
-        $('#fin2').append('<td class="hijos"><button class="button primary block-shadow-primary text-shadow">'+cursos+'</button></td>\n' +
-            '<td class="hijos"><button class="button primary block-shadow-primary text-shadow">'+cursos+'</button></td>');
+    if(horarios=='FIN DE SEMANA'){
+        $('#fin1').append('<td class="hijos"><button class="button primary block-shadow-primary text-shadow">'+cursos+'</button></td>');
     }
 }

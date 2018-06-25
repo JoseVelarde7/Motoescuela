@@ -57,17 +57,13 @@
                     <thead>
                     <tr>
                         <th class="bg-lighterBlue fg-white">Horario</th>
-                        <th class="bg-lighterBlue fg-white">Sábado</th>
-                        <th class="bg-lighterBlue fg-white">Domingo</th>
+                        <th class="bg-lighterBlue fg-white">Sábados y Domingos</th>
                     </tr>
                     </thead>
                     <tbody>
-                    <tr id="fin1">
-                        <td class="bg-lightRed fg-white size4">08:00 a 12:30</td>
-                    </tr>
-                    <tr id="fin2">
-                        <td class="bg-lightRed fg-white">14:00 a 18:00</td>
-                    </tr>
+                        <tr id="fin1">
+                            <td class="bg-lightRed fg-white size4">08:00 a 18:00</td>
+                        </tr>
                     </tbody>
                 </table>
             </div>

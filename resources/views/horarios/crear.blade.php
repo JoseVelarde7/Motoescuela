@@ -12,8 +12,17 @@
 
                 <div class="cell">
                     <label for="nombre">Nombre: </label>
-                    <div class="input-control text full-size">
+                    {{--<div class="input-control text full-size">
                         <input type="text" name="nombre" id="nombre" value="{{old('nombre')}}">
+                    </div>--}}
+                    <div class="input-control select full-size">
+                        <select name="nombre" id="nombre">
+                            <option value="PERIODO 1">PERIODO 1</option>
+                            <option value="PERIODO 2">PERIODO 2</option>
+                            <option value="PERIODO 3">PERIODO 3</option>
+                            <option value="PERIODO 4">PERIODO 4</option>
+                            <option value="FIN DE SEMANA">FIN DE SEMANA</option>
+                        </select>
                     </div>
                 </div>
 

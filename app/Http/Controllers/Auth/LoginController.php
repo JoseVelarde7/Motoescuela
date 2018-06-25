@@ -5,6 +5,8 @@ namespace App\Http\Controllers\Auth;
 use App\Http\Controllers\Controller;
 use Auth;
 use Illuminate\Support\Facades\DB;
+use Session;
+use Illuminate\Http\Request;
 
 class LoginController extends Controller
 {
@@ -39,12 +41,27 @@ class LoginController extends Controller
     }
 
     public function generar(){
-        $curso = DB::table('cursos')
-            ->select('curso_nombre','id')
-            ->where('curso_estado','=',1)
+        $curso = DB::table('inscripcones')
+            ->join('alumnos', 'alumnos.id', '=', 'inscripcones.alumno_id')
+            ->select('inscripcones.*', 'alumno_nombre')
+            ->where('inscripcion_estado','=',1)
             ->get();
         $usuarios = DB::table('users')->count();
         $alumnos = DB::table('alumnos')->count();
-        return response()->json([$curso,$usuarios,$alumnos]);
+        $motos = DB::table('motos')->count();
+        return response()->json([$usuarios,$alumnos,$motos,$curso]);
     }
+
+    /*protected function sendLoginResponse(Request $request){
+        $request->session()->regenerate();
+        $previous_session=Auth::User()->session_id;
+        if($previous_session){
+            \Session::getHandler()->destroy($previous_session);
+        }
+        Auth::user()->session_id=\Session::getId();
+        Auth::user()->save();
+        $this->clearLoginAttempts($request);
+        return $this->authenticated($request, $this->guard()->user())
+            ?: redirect()->intended($this->redirectPath());
+    }*/
 }
