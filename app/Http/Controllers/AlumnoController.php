@@ -25,13 +25,15 @@ class AlumnoController extends Controller
 
     public function store(){
         $data=request()->validate([
-            'nombre'=>'required',
+            'nombre'=>['required','alpha_spaces'],
             'celular'=>['required','numeric'],
             'direccion'=>'required',
             'ci'=>['required','unique:alumnos,alumno_ci'],
+            'ext'=>'nullable',
             'estado'=>'required'
         ],[
             'nombre.required'=>'El Campo Nombre es obligatorio',
+            'nombre.alpha_spaces'=>'El Nombre solo puede tener letras',
             'celular.required'=>'El Campo Celular es obligatorio',
             'celular.numeric'=>'El Campo Celular debe ser numerico',
             'direccion.required'=>'El Campo Direccion es obligatorio',
@@ -44,7 +46,7 @@ class AlumnoController extends Controller
             'alumno_nombre' => $data['nombre'],
             'alumno_celular' => $data['celular'],
             'alumno_direccion' => $data['direccion'],
-            'alumno_ci' => $data['ci'],
+            'alumno_ci' => $data['ci']." ".$data['ext'],
             'alumno_activo' => $data['estado']
         ]);
 
@@ -62,6 +64,7 @@ class AlumnoController extends Controller
             'celular'=>['required','numeric'],
             'direccion'=>'required',
             'ci'=>['required',Rule::unique('alumnos','alumno_ci')->ignore($id)],
+            'ext'=>'nullable',
             'estado'=>'required'
         ],[
             'nombre.required'=>'El Campo Nombre es obligatorio',
@@ -76,7 +79,7 @@ class AlumnoController extends Controller
             'alumno_nombre' => $data['nombre'],
             'alumno_celular' => $data['celular'],
             'alumno_direccion' => $data['direccion'],
-            'alumno_ci' => $data['ci'],
+            'alumno_ci' => $data['ci']." ".$data['ext'],
             'alumno_activo' => $data['estado']
         ]);
         return redirect()->route('alumnos.show',['alumno' => $id]);

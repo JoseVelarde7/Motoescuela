@@ -35,8 +35,23 @@
 
                 <div class="cell">
                     <label for="ci">Carnet: </label>
-                    <div class="input-control text full-size">
-                        <input type="text" name="ci" value="{{old('ci')}}">
+                    <div class="row">
+                        <div class="input-control text full-size cell-6">
+                            <input type="text" name="ci" value="{{old('ci')}}">
+                        </div>
+                        <div class="input-control select full-size cell-6">
+                            <select name="ext" id="ext" form="formulario">
+                                <option value="LP">LA PAZ</option>
+                                <option value="OR">ORURO</option>
+                                <option value="PT">POTOSI</option>
+                                <option value="CBBA">COCHABAMBA</option>
+                                <option value="SC">SUCRE</option>
+                                <option value="TJ">TARIJA</option>
+                                <option value="SCz">SANTA CRUZ</option>
+                                <option value="BN">BENI</option>
+                                <option value="PN">PANDO</option>
+                            </select>
+                        </div>
                     </div>
                     @if($errors->first('ci'))<div class='tag alert'>{{ $errors->first('ci')}} </div>@endif
                 </div>

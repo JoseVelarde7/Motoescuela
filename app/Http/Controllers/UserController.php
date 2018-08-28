@@ -19,8 +19,9 @@ class UserController extends Controller
 
     public function store(){
         $data=request()->validate([
-            'nombre'=>'required',
+            'nombre'=>['required','alpha_spaces'],
             'ci'=>'required',
+            'ext'=>'nullable',
             'direccion'=>'required',
             'celular'=>['required','numeric'],
             'cargo'=>'required',
@@ -30,6 +31,7 @@ class UserController extends Controller
             'file'=>'nullable'
         ],[
             'nombre.required'=>'El nombre es obligatorio',
+            'nombre.alpha_spaces'=>'El nombre no puede contener números',
             'ci.required'=>'El CI es obligatorio',
             'direccion.required'=>'la direccion es obligatorio',
             'celular.required'=>'celular es obligatorio',
@@ -44,7 +46,7 @@ class UserController extends Controller
         if(empty($data['file'])){
             User::create([
                 'user_nombre' => $data['nombre'],
-                'user_ci' => $data['ci'],
+                'user_ci' => $data['ci']." ".$data['ext'],
                 'user_direccion' => $data['direccion'],
                 'user_celular' => $data['celular'],
                 'user_cargo' => $data['cargo'],
@@ -59,7 +61,7 @@ class UserController extends Controller
             \Storage::disk('local')->put($nombre,  \File::get($file));
             User::create([
                 'user_nombre' => $data['nombre'],
-                'user_ci' => $data['ci'],
+                'user_ci' => $data['ci']." ".$data['ext'],
                 'user_direccion' => $data['direccion'],
                 'user_celular' => $data['celular'],
                 'user_cargo' => $data['cargo'],
@@ -87,7 +89,7 @@ class UserController extends Controller
         if(empty($data['file'])){
             User::find($id)->update([
                 'user_nombre' => $data['nombre'],
-                'user_ci' => $data['ci'],
+                'user_ci' => $data['ci']." ".$data['ext'],
                 'user_direccion' => $data['direccion'],
                 'user_celular' => $data['celular'],
                 'user_cargo' => $data['cargo'],
@@ -102,7 +104,7 @@ class UserController extends Controller
             \Storage::delete($data['nfoto']);
             User::find($id)->update([
                 'user_nombre' => $data['nombre'],
-                'user_ci' => $data['ci'],
+                'user_ci' => $data['ci']." ".$data['ext'],
                 'user_direccion' => $data['direccion'],
                 'user_celular' => $data['celular'],
                 'user_cargo' => $data['cargo'],

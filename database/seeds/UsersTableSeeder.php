@@ -13,7 +13,7 @@ class UsersTableSeeder extends Seeder
     {
         DB::table('users')->insert([
             'user_nombre' => 'Juan Jose Velarde',
-            'user_ci' => '9221121',
+            'user_ci' => '9221121 LP',
             'user_direccion' => str_random(10),
             'user_celular' => str_random(10),
             'user_cargo' => str_random(10),

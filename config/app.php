@@ -178,6 +178,8 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
         Barryvdh\DomPDF\ServiceProvider::class,
+        //Custom validation rules
+        \App\Providers\CustomValidationRulesProvider::class,
 
     ],
 

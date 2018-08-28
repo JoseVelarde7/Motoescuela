@@ -1,13 +1,25 @@
 @extends('layout')
 
 @section('content')
-
+    <?php
+    $extenciones=array(
+        array('nombre'=>"LA PAZ",'valor'=>"LP"),
+        array('nombre'=>"SANTA CRUZ",'valor'=>"SCZ"),
+        array('nombre'=>"COCHABAMBA",'valor'=>"CBBA"),
+        array('nombre'=>"ORURO",'valor'=>"OR"),
+        array('nombre'=>"POTOSI",'valor'=>"PT"),
+        array('nombre'=>"SUCRE",'valor'=>"SC"),
+        array('nombre'=>"TARIJA",'valor'=>"TJ"),
+        array('nombre'=>"PANDO",'valor'=>"PN"),
+        array('nombre'=>"BENI",'valor'=>"BN"),
+    );
+    ?>
     <h1 class="text-light">Registrar Nuevo Alumno<span class="mif-user place-right"></span></h1>
     <hr class="thin bg-grayLighter"><br><br>
     <div class="row">
         <div class="cell colspan1"></div>
         <div class="cell colspan6">
-            <form method="POST" action="{{url('alumnos/insertar')}}">
+            <form method="POST" action="{{url('alumnos/insertar')}}" id="formulario" name="formulario">
                 {!! csrf_field() !!}
                 <div class="cell">
                     <label for="nombre">Nombre: </label>
@@ -33,9 +45,19 @@
 
                 <div class="cell">
                     <label for="ci">Carnet: </label>
-                    <div class="input-control text full-size">
-                        <input type="text" name="ci" value="{{old('ci')}}">
+                    <div class="row">
+                        <div class="input-control text full-size cell-6">
+                            <input type="text" name="ci" value="{{old('ci')}}">
+                        </div>
+                        <div class="input-control select full-size cell-6">
+                            <select name="ext" id="ext" form="formulario">
+                                @foreach($extenciones as $ext)
+                                    <option value="{{$ext['valor']}}">{{$ext['nombre']}}</option>
+                                @endforeach
+                            </select>
+                        </div>
                     </div>
+
                 </div>
 
                 <div class="cell">
