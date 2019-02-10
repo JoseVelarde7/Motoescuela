@@ -127,7 +127,8 @@ class UserController extends Controller
     }
 
     public function generar(){
-        $user=User::all();
+        //$user=User::all();
+        $user=User::where('user_cargo','INSTRUCTOR')->get();
         return response()->json($user);
     }
 

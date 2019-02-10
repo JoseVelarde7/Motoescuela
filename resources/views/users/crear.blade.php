@@ -59,7 +59,12 @@
                 <div class="cell">
                     <label for="obs">Cargo: </label>
                     <div class="input-control text full-size">
-                        <input type="text" name="cargo" value="{{old('cargo')}}">
+                        {{--<input type="text" name="cargo" value="{{old('cargo')}}">--}}
+                        <select name="cargo">
+                            <option value="INSTRUCTOR">INSTRUCTOR</option>
+                            <option value="ADMINISTRATIVO">ADMINISTRATIVO</option>
+                            <option value="OTRO">OTRO</option>
+                        </select>
                     </div>
                     @if($errors->first('cargo'))<div class='tag alert'>{{ $errors->first('cargo')}} </div>@endif
                 </div>

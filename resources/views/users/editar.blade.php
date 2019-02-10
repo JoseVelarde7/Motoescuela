@@ -68,7 +68,22 @@
                 <div class="cell">
                     <label for="obs">Cargo: </label>
                     <div class="input-control text full-size">
-                        <input type="text" name="cargo" value="{{old('cargo',$user->user_cargo)}}">
+                        {{--<input type="text" name="cargo" value="{{old('cargo',$user->user_cargo)}}">--}}
+                        <select name="cargo" id="cargo">
+                            @if($user->user_cargo=='INSTRUCTOR')
+                                <option value="INSTRUCTOR" selected>INSTRUCTOR</option>
+                                <option value="ADMINISTRATIVO">ADMINISTRATIVO</option>
+                                <option value="OTRO">OTRO</option>
+                            @elseif($user->user_cargo=='ADMINISTRATIVO')
+                                <option value="INSTRUCTOR">ADMINISTRATIVO</option>
+                                <option value="ADMINISTRATIVO" selected>ADMINISTRATIVO</option>
+                                <option value="OTRO">OTRO</option>
+                            @else
+                                <option value="INSTRUCTOR">INSTRUCTOR</option>
+                                <option value="ADMINISTRATIVO">ADMINISTRATIVO</option>
+                                <option value="OTRO" selected>OTRO</option>
+                            @endif
+                        </select>
                     </div>
                 </div>
 
