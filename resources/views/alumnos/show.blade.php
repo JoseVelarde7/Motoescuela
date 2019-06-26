@@ -8,8 +8,11 @@
     <h2>Celular: {{$alumno->alumno_celular}}</h2>
     <h2>Direccion: {{$alumno->alumno_direccion}}</h2>
     <h2>Carnet: {{$alumno->alumno_ci}}</h2>
-    <h2>Estado: {{$alumno->alumno_activo}}</h2>
-
+    @if($alumno->alumno_activo)
+        <h2>Estado: Activo</h2>
+    @else
+        <h2>Estado: Inactivo</h2>
+    @endif
     <br><br>
     <a href="{{ url('/alumnos/') }}" class="button alert block-shadow-alert text-shadow">Regresar</a>
 

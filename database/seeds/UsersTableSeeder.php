@@ -19,6 +19,7 @@ class UsersTableSeeder extends Seeder
             'user_cargo' => str_random(10),
             'user_tipo' => "USER1",
             'user_user' => "juan",
+            'user_estado' => true,
             'password' => bcrypt('secret'),
             'user_foto' => str_random(10)
         ]);

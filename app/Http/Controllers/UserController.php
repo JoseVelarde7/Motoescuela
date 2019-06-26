@@ -10,7 +10,7 @@ use Illuminate\Validation\Rule;
 class UserController extends Controller
 {
     public function index(){
-        $user=User::all();
+        $user=User::where('user_estado',true)->get();
         return view('users.lista',compact('user'));
     }
     public function create(){
@@ -52,6 +52,7 @@ class UserController extends Controller
                 'user_cargo' => $data['cargo'],
                 'user_tipo' => $data['tipo'],
                 'user_user' => $data['user'],
+                'user_estado' => true,
                 'password' => bcrypt($data['pass']),
                 'user_foto' => ""
             ]);
@@ -67,6 +68,7 @@ class UserController extends Controller
                 'user_cargo' => $data['cargo'],
                 'user_tipo' => $data['tipo'],
                 'user_user' => $data['user'],
+                'user_estado' => true,
                 'password' => bcrypt($data['pass']),
                 'user_foto' => $nombre
             ]);
@@ -119,11 +121,14 @@ class UserController extends Controller
     }
 
     public function destroy($id){
-        $user=User::findOrFail($id);
+        /*Version antigua*/
+        /*$user=User::findOrFail($id);
         \Storage::delete($user->usuario_foto);
-        $user->delete();
+        $user->delete();*/
+        User::find($id)->update([
+            'user_estado' => false,
+        ]);
         return response()->json(["mensaje"=>"borrado"]);
-        //return redirect()->route('alumnos.index');
     }
 
     public function generar(){

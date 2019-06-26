@@ -54,7 +54,7 @@
                         <div class="input-control select full-size cell-6">
                             <select name="ext" id="ext" form="formulario">
                                 @foreach($extenciones as $ext)
-                                    @if($ext['valor']==$cedula[1])
+                                    @if($ext['valor']==$cedula[0])
                                         <option value="{{$ext['valor']}}" selected>{{$ext['nombre']}}</option>
                                     @else
                                         <option value="{{$ext['valor']}}">{{$ext['nombre']}}</option>

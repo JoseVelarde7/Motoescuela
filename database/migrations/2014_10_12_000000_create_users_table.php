@@ -24,6 +24,7 @@ class CreateUsersTable extends Migration
             $table->string('user_tipo',30);
             $table->string('user_user',20)->unique();
             $table->string('password');
+            $table->boolean('user_estado');
             $table->string('user_foto',20);
             $table->rememberToken();
         });
