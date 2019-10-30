@@ -30,6 +30,11 @@ $(document).ready(function(){
         var horario=$("#horario").val();
         var usuario=$('#usuario').val();
         var moto=$('#smotos').val();
+        var obs=$('#obs').val();
+        if(obs==''){
+            alert("Debe llenar las observaciones");
+            return false;
+        }
         validar(function (res1) {
             console.log(res1);
             if(res1=="correcto"){

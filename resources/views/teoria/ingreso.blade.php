@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -36,12 +35,13 @@
                             {!! csrf_field() !!}
                             <fieldset>
                                 <div class="form-group">
-                                    <input class="form-control" placeholder="Nombre" name="nombre" type="text">
+                                    <input class="form-control" placeholder="Nombre" name="nombre" id="nam" type="text">
                                 </div>
                                 <div class="form-group">
-                                    <input class="form-control" placeholder="C.I." name="carnet" type="password">
+                                    <input class="form-control" placeholder="C.I." name="carnet" id="car" type="password">
                                 </div>
                                 <input class="btn btn-lg btn-success btn-block" type="submit" value="Ingresar">
+                                <button id="btnValidar" class="btn btn-danger btn-block">Aceptar</button>
                             </fieldset>
                         </form>
                     </div>
@@ -78,6 +78,25 @@
             if(ide!="" && re!=""){
                 mostrar2(ide,re)
             }
+        });
+
+        $('#btnValidar').click(function (e) {
+            e.preventDefault();
+            var nombre=$('#nam').val();
+            var carnet=$('#car').val();
+            $.getJSON("/teoria/validacion",{nombre:nombre,carnet:carnet}, function(res){
+                console.log(res.datos);
+                if(res.datos==600){
+                    alert("Clave de acceso incorrecta");
+                }else if(res.datos==602){
+                    alert("El usuario ya tomó el examen");
+                }else{
+                    window.location.href = "examenes/examen?id="+res.datos[1]+"&nombre"+res.datos[0]+"=&preguntas="+res.datos[2]+"&respuestas="+res.datos[3];
+                    //'preguntas','respuestas','nombre','id'
+                }
+                ///examenes/examen
+                //console.log(res.datos[0]);
+            });
         });
 
         function mostrar2(id,cadena) {

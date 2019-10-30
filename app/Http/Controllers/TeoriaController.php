@@ -59,4 +59,45 @@ class TeoriaController extends Controller
         }
     }
 
+    public function validacion(){
+        $data=request()->all();
+        $consulta= DB::table('alumnos')
+            ->select('id', 'alumno_nombre')
+            ->where([
+                ['alumno_nombre', '=', $data['nombre']],
+                ['alumno_ci', '=', $data['carnet']],
+            ])->get();
+        //return response()->json(["datos"=>$consulta]);
+        if(empty($consulta[0]->alumno_nombre)){
+            return response()->json(["datos"=>"600"]);
+        }else{
+            $alumnos=DB::table('alumnos')
+                ->join('teoria','alumnos.id','=','teoria.alumno_id')
+                ->select('teoria_fecha','alumno_nombre')
+                ->where('alumno_ci',$data['carnet'])->get();
+            if(empty($alumnos[0]->teoria_fecha)){
+                $nombre=$data['nombre'];
+                $id=$consulta[0]->id;
+                $preguntas=Examen::all();
+                $respuestas = DB::table('opciones')->get();
+                //return view('examenes.examen',compact('preguntas','respuestas','nombre','id'));
+                //return redirect('dashboard')->with('status', 'Profile updated!');
+                //return redirect('/examenes/examen')->with($nombre, 'preguntas', 'respuestas','id');
+                //return redirect()->route('examen.examen')->with([$nombre]);
+                $r[]=$nombre;
+                $r[]=$id;
+                $r[]=$preguntas;
+                $r[]=$respuestas;
+                return response()->json(["datos"=>$r]);
+            }else{
+                return response()->json(["datos"=>"602"]);
+            }
+        }
+    }
+
+    public function examen(){
+        $resultado="";
+        return view('teoria.ingreso',compact('resultado'));
+    }
+
 }

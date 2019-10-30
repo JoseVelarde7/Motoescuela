@@ -24,6 +24,7 @@ Route::get('salir','Auth\LoginController@salir')->name('salir');
 //Pruebas
 Route::get('/ingresar','TeoriaController@index')->name('teoria.index');
 Route::post('/teoria/examen','TeoriaController@validar')->name('teoria.validar');
+Route::get('/teoria/validacion','TeoriaController@validacion')->name('teoria.validacion');
 Route::post('/teoria/insertar','TeoriaController@store')->name('teoria.store');
 Route::get('/examenes/examen','ExamenController@examen')->name('examen.examen');
 
@@ -130,6 +131,10 @@ Route::get('/examenes/examen','ExamenController@examen')->name('examen.examen');
 
     Route::get("download-pdf/{ide}","ReporteController@downloadPDF");
     Route::get("reportes/usuarios-pdf","ReporteController@usuarioPDF");
+    Route::get("reportes/alumnos-pdf","ReporteController@alumnoPDF");
+    Route::get("reportes/motos-pdf","ReporteController@motosPDF");
+    Route::get("reportes/horarios-pdf","ReporteController@horariosPDF");
+    Route::get("reportes/inscripciones-pdf","ReporteController@inscripcionesPDF");
 
 
 

@@ -5,6 +5,7 @@
     <hr class="thin bg-grayLighter">
     @if(Auth::user()->user_tipo=='USER1' || Auth::user()->user_tipo=='USER2')
     <a class="button primary" href="{{url('motos/crear')}}"><span class="mif-plus"></span> Crear</a>
+    <a href="{{url('reportes/motos-pdf')}}" class="button success"><span class="mif-print"></span>Imprimir</a>
     <hr class="thin bg-grayLighter">
     @endif
     <table class="dataTable border bordered" data-role="datatable" data-auto-width="false" data-order='[[ 0, "dec" ]]' data-page-length='6'>

@@ -4,6 +4,7 @@
     <h1 class="text-light">Horarios<span class="mif-user place-right"></span></h1>
     <hr class="thin bg-grayLighter">
     <a class="button primary" href="{{url('horarios/crear')}}"><span class="mif-plus"></span> Crear</a>
+    <a href="{{url('reportes/horarios-pdf')}}" class="button success"><span class="mif-print"></span>Imprimir</a>
     <hr class="thin bg-grayLighter">
     <table class="dataTable border bordered" data-role="datatable" data-auto-width="false" data-order='[[ 0, "dec" ]]' data-page-length='6'>
         <thead>
