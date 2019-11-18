@@ -6,7 +6,7 @@
   {{--<a class="button primary" href="{{url('pagos/crear')}}"><span class="mif-plus"></span> Crear</a>
   <hr class="thin bg-grayLighter">--}}
   <div class="tile-container bg-white">
-    @if(Auth::user()->user_tipo=="USER1")
+    <!--@if(Auth::user()->user_tipo=="USER1")
       <a href="http://localhost/facturacion/pages/forms/sign.php?usuario=admin.admin&clave=utic" class="tile bg-green fg-white" data-role="tile">
         <div class="tile-content iconic">
           <span class="icon mif-dollar"></span>
@@ -22,9 +22,9 @@
           </div>
           <h4 class="tile-label" align="center">Módulo Facturación</h4>
         </a>
-    @endif
+    @endif-->
 
-    <!--<a href="{{url('/facturas/crear')}}" class="tile bg-green fg-white" data-role="tile">
+    <a href="{{url('/facturas/crear')}}" class="tile bg-green fg-white" data-role="tile">
       <div class="tile-content iconic">
         <span class="icon mif-dollar"></span>
       </div>
@@ -35,7 +35,7 @@
                 <span class="icon mif-list"></span>
             </div>
             <h4 class="tile-label" align="center">Lista Facturas</h4>
-        </a>-->
+        </a>
   </div>
   {{--<table class="dataTable border bordered" data-role="datatable" data-auto-width="false" data-order='[[ 0, "dec" ]]' data-page-length='6'>
       <thead>

@@ -34,13 +34,13 @@
     <div class="right-invoice">
         <section id="memo">
             <div class="company-info">
-                <div id="">Motoescuela DAKAR</div>
+                <div id="">1ra Motoescuela Dakar</div>
                 <br>
-                <span>DE: Shirley Ninoska Iporre Ferrufino</span><br>
+                <span>DE: Jose Adolfo San Roman Molina</span><br>
                 <span>CASA MATRIZ</span><br>
-                <span>Calle Viacha Nro 383 Edif Aliber</span>
-                <span>Piso 1 Dpto z/San Sebastian</span>
-                <span>Telf: 2460704-72511961</span><br>
+                <span>Av. 14 de septiembre No 5190</span>
+                <span>Zona Obrajes</span>
+                <span>Telf: 2787330 - 71522201</span><br>
                 <span>La Paz - Bolivia</span>
             </div>
 
@@ -49,7 +49,7 @@
             </div>
         </section>
         <div style="font-size:20px;" align="center">
-            <span>El alto {{$factura->factura_fecha}}</span>
+            <span>La Paz {{$factura->factura_fecha}}</span>
         </div>
         <section id="invoice-title-number">
             <div id="title">Factura # {{$factura->factura_numero}}</div>
@@ -101,7 +101,7 @@
         <div class="clearfix"></div><br>
         <div id="demo" style="display:inline-block; float: right;"></div>
         <div>"ESTA FACTURA CONTRIBUYE AL DESARROLLO DEL PAIS EL USO ILICITO DE ESTA SERA SANCIONADO DE ACUERDO A LEY"</div>
-        <p>LEY Nro 453: Cuando lo solicite el paciente, se debe informar los resultados de examenes, diagnosticos y estudios de laboratorio</p>
+        <p>LEY Nro 453: El proveedor deberá dar cumplimiento a las condiciones ofertadas.</p>
     </div>
 </div>
 </body>
