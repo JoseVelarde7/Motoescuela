@@ -28,13 +28,13 @@
       <div class="tile-content iconic">
         <span class="icon mif-dollar"></span>
       </div>
-      <h4 class="tile-label" align="center">Crear Factura</h4>
+      <h4 class="tile-label" align="center">Crear Recibo</h4>
     </a>
   <a href="{{url('/facturas')}}" class="tile bg-darkBlue fg-white" data-role="tile">
             <div class="tile-content iconic">
                 <span class="icon mif-list"></span>
             </div>
-            <h4 class="tile-label" align="center">Lista Facturas</h4>
+            <h4 class="tile-label" align="center">Lista Recibos</h4>
         </a>
   </div>
   {{--<table class="dataTable border bordered" data-role="datatable" data-auto-width="false" data-order='[[ 0, "dec" ]]' data-page-length='6'>

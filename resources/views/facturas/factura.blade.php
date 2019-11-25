@@ -52,7 +52,7 @@
             <span>La Paz {{$factura->factura_fecha}}</span>
         </div>
         <section id="invoice-title-number">
-            <div id="title">Factura # {{$factura->factura_numero}}</div>
+            <div id="title">Recibo # {{$factura->factura_numero}}</div>
         </section>
         <section id="client-info">
             <div class="client-name">

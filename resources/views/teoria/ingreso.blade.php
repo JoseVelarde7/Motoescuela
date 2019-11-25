@@ -40,7 +40,7 @@
                                 <div class="form-group">
                                     <input class="form-control" placeholder="C.I." name="carnet" id="car" type="password">
                                 </div>
-                                <input class="btn btn-lg btn-success btn-block" type="submit" value="Ingresar">
+                                <!--<input class="btn btn-lg btn-success btn-block" type="submit" value="Ingresar">-->
                                 <button id="btnValidar" class="btn btn-danger btn-block">Aceptar</button>
                             </fieldset>
                         </form>
@@ -91,7 +91,7 @@
                 }else if(res.datos==602){
                     alert("El usuario ya tomó el examen");
                 }else{
-                    window.location.href = "examenes/examen?id="+res.datos[1]+"&nombre"+res.datos[0]+"=&preguntas="+res.datos[2]+"&respuestas="+res.datos[3];
+                    window.location.href = "examenes/examen?id="+res.datos[1]+"&nombre="+res.datos[0]+"=&preguntas="+res.datos[2]+"&respuestas="+res.datos[3];
                     //'preguntas','respuestas','nombre','id'
                 }
                 ///examenes/examen

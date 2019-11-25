@@ -7,7 +7,7 @@
 
 @section('content')
 
-    <h1 class="text-light">Crear Factura<span class="mif-user place-right"></span></h1>
+    <h1 class="text-light">Crear Recibo<span class="mif-user place-right"></span></h1>
     <hr class="thin bg-grayLighter"><br><br>
     <div class="row">
         <div class="cell colspan1"></div>
