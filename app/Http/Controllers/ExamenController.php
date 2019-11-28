@@ -21,7 +21,7 @@ class ExamenController extends Controller
     public function examen(){
         $preguntas=Examen::all();
         $respuestas = DB::table('opciones')->get();
-        return view('examenes.examen',compact('preguntas','respuestas'));
+        return view('examenes.examen2',compact('preguntas','respuestas'));
     }
 
     public function soluciones(){

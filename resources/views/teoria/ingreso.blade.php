@@ -91,7 +91,7 @@
                 }else if(res.datos==602){
                     alert("El usuario ya tomó el examen");
                 }else{
-                    window.location.href = "examenes/examen?id="+res.datos[1]+"&nombre="+res.datos[0]+"=&preguntas="+res.datos[2]+"&respuestas="+res.datos[3];
+                    window.location.href = "examenes/examen?id="+res.datos[1]+"&nombre="+res.datos[0]+"&preguntas="+res.datos[2]+"&respuestas="+res.datos[3];
                     //'preguntas','respuestas','nombre','id'
                 }
                 ///examenes/examen
