@@ -72,11 +72,11 @@
                         </a></li>
                     <li id="menu_factura"><a href="{{ url('/facturas/crear') }}">
                             <span class="mif-user icon"></span>
-                            <span class="title">Crear Factura</span>
+                            <span class="title">Crear Recibo</span>
                         </a></li>
                     <li id="menu_lista"><a href="{{ url('/facturas') }}">
                             <span class="mif-users icon"></span>
-                            <span class="title">Lista Facturas</span>
+                            <span class="title">Lista de Recibos</span>
                         </a></li>
                     {{--<li id="menu_moto"><a href="{{ url('/motos') }}">
                             <span class="mif-motorcycle icon"></span>

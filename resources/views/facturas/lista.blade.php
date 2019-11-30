@@ -7,7 +7,7 @@
 
 @section('content')
 
-    <h1 class="text-light">Lista de Facturas<span class="mif-user place-right"></span></h1>
+    <h1 class="text-light">Lista de Recibos<span class="mif-user place-right"></span></h1>
     <hr class="thin bg-grayLighter"><br><br>
     <table class="dataTable border bordered" data-role="datatable" data-auto-width="false" data-order='[[ 0, "dec" ]]' data-page-length='6'>
         <thead>
