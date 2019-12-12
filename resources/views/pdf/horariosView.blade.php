@@ -94,7 +94,15 @@
   </style>
 <body>
 <div id="header">
-  <h3>1ra Motoescuela Dakar</h3>
+  <table>
+    <tr>
+      <td width="400">
+        <h4>1ra Motoescuela Dakar</h4>
+      </td>
+      <td width="200"></td>
+      <td width="200">Fecha: {{  date("d-m-Y H:i:s") }}</td>
+    </tr>
+  </table>
 </div>
 <div id="footer" align="center">
   <p class="page" align="center"><a href="#"></a></p>
